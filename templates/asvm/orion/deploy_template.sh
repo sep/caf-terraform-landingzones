@@ -5,9 +5,9 @@ read -r landingzone_definition
 
 export ANSIBLE_DISPLAY_SKIPPED_HOSTS=False
 
-ansible-playbook /tf/caf/landingzones/templates/asvm/orion/walk-through.yaml \
-  -e topology_folder=/tf/caf/landingzones/templates/asvm/orion \
-  -e public_templates_folder=/tf/caf/landingzones/templates \
+ansible-playbook /tf/caf/sepcaflz/templates/asvm/orion/walk-through.yaml \
+  -e topology_folder=/tf/caf/sepcaflz/templates/asvm/orion \
+  -e public_templates_folder=/tf/caf/sepcaflz/templates \
   -e landingzones_folder=/tf/caf/landingzones \
   -e template_folder=/tf/caf/asvm/${landingzone_definition} \
   -e definition_folder=/tf/caf/asvm/${landingzone_definition}/definition \
