@@ -4,8 +4,6 @@ module "vmss_extension_microsoft_azure_domainjoin" {
 
   source = "../../sepcaf/modules/compute/virtual_machine_scale_set_extensions"
 
-  depends_on = [module.solution]
-
   for_each = {
     for key, value in try(var.virtual_machine_scale_sets, {}) : key => value
     if try(value.virtual_machine_scale_set_extensions.microsoft_azure_domainjoin, null) != null
@@ -24,8 +22,6 @@ module "vmss_extension_custom_scriptextension" {
   # version = "5.5.5"
 
   source = "../../sepcaf/modules/compute/virtual_machine_scale_set_extensions"
-
-  depends_on = [module.solution]
 
   for_each = {
     for key, value in try(var.virtual_machine_scale_sets, {}) : key => value
