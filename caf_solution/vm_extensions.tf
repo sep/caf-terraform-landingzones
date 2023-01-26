@@ -6,7 +6,7 @@ module "vm_extension_monitoring_agent" {
   # source  = "aztfmod/caf/azurerm//modules/compute/virtual_machine_extensions"
   # version = "5.5.5"
 
-  source = "git::https://github.com/sep/terraform-azurerm-caf.git//modules/compute/virtual_machine_extensions"
+  source = "git::https://github.com/sep/terraform-azurerm-caf.git//modules/compute/virtual_machine_extensions?ref=sep-mods"
  
 
 
@@ -28,7 +28,7 @@ module "vm_extension_diagnostics" {
   # source  = "aztfmod/caf/azurerm//modules/compute/virtual_machine_extensions"
   # version = "5.5.5"
 
-  source = "git::https://github.com/sep/terraform-azurerm-caf.git//modules/compute/virtual_machine_extensions"
+  source = "git::https://github.com/sep/terraform-azurerm-caf.git//modules/compute/virtual_machine_extensions?ref=sep-mods"
   
   
   
@@ -53,7 +53,7 @@ module "vm_extension_microsoft_azure_domainjoin" {
   # source  = "aztfmod/caf/azurerm//modules/compute/virtual_machine_extensions"
   # version = "5.5.5"
 
-  source = "../../sepcaf/modules/compute/virtual_machine_extensions"
+  source = "git::https://github.com/sep/terraform-azurerm-caf.git//modules/compute/virtual_machine_extensions?ref=sep-mods"
 
   for_each = {
     for key, value in try(var.virtual_machines, {}) : key => value
@@ -71,7 +71,7 @@ module "vm_extension_session_host_dscextension" {
   # source  = "aztfmod/caf/azurerm//modules/compute/virtual_machine_extensions"
   # version = "5.5.5"
 
-  source = "git::https://github.com/sep/terraform-azurerm-caf.git//modules/compute/virtual_machine_extensions"
+  source = "git::https://github.com/sep/terraform-azurerm-caf.git//modules/compute/virtual_machine_extensions?ref=sep-mods"
 
   depends_on = [module.vm_extension_microsoft_azure_domainjoin]
 
@@ -93,7 +93,7 @@ module "vm_extension_custom_scriptextension" {
   # source  = "aztfmod/caf/azurerm//modules/compute/virtual_machine_extensions"
   # version = "5.5.5"
 
-  source = "git::https://github.com/sep/terraform-azurerm-caf.git//modules/compute/virtual_machine_extensions"
+  source = "git::https://github.com/sep/terraform-azurerm-caf.git//modules/compute/virtual_machine_extensions?ref=sep-mods"
 
   depends_on = [ module.vm_extension_microsoft_azure_domainjoin]
 
