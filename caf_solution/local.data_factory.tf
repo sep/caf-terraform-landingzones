@@ -23,6 +23,7 @@ locals {
       postgresql         = merge(try(var.data_factory_linked_services.postgresql, {}), try(var.data_factory_linked_services.postgresql, {}))
       sql_server         = merge(try(var.data_factory_linked_services.sql_server, {}), try(var.data_factory_linked_services.sql_server, {}))
       web                = merge(try(var.data_factory_linked_services.web, {}), try(var.data_factory_linked_services.web, {}))
+      azure_sql_database = merge(try(var.data_factory_linked_services.azure_sql_database, {}), try(var.data_factory_linked_services.azure_sql_database, {}))
     }
   }
 }
