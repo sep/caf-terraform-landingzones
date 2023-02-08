@@ -33,3 +33,7 @@ output "launchpad_identities" {
 output "webapps" {
   value = local.webapp
 }
+  
+output "cafsmwebapps" {
+  value = module.solution.webapps
+}
