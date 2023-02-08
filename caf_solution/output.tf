@@ -29,3 +29,7 @@ output "launchpad_identities" {
   value     = var.propagate_launchpad_identities ? data.terraform_remote_state.remote[var.landingzone.global_settings_key].outputs.launchpad_identities : {}
   sensitive = true
 }
+
+output "webapps" {
+  value = local.webapp
+}
